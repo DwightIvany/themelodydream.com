@@ -11,7 +11,9 @@ Key facts:
 
 - **Fully static.** S3 serves files byte-for-byte. No PHP, no server-side includes, no `.inc` processing. (The last PHP file, `webformmailer.php`, was removed 2026-10.)
 - **Every object needs a `public-read` ACL.** CloudFront fetches the public S3 website endpoint without origin-access signing, so any object without that ACL returns **403**. Old objects got their ACLs years ago; anything new needs `--acl public-read` at sync time.
-- Changes can take a few seconds to show at the public URL — CloudFront caches errors briefly too.
+- **CloudFront caches pages.** After a sync, stale copies may keep serving for hours. Purge the cache to see changes immediately:
+  `aws cloudfront create-invalidation --distribution-id E2K35AE45RTZGC --paths "/*" --profile theme`
+  then check status: `aws cloudfront list-invalidations --distribution-id E2K35AE45RTZGC --profile theme` (takes ~30s). Only the first 1,000 invalidation paths per month are free — a `/*` purge counts as one.
 
 ## Sync commands (run in WSL, from this folder)
 
