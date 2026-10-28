@@ -6,6 +6,12 @@ Reads generator/{site,albums,pages}.yaml + generator/src/pages/ + generator/temp
 writes rendered HTML pages to the repo root (CRLF, UTF-8). Reports which files
 changed so you can review with git diff before syncing.
 
+Also checks every internal href/src in the rendered pages against files on disk
+and warns about missing targets (the "conscience" — surfaces 20 years of link
+rot). Warnings never fail the build; external links, mailto, and pure anchors
+are skipped. mp3 links are only checked when the local mp3/ folder exists
+(it is gitignored, so CI checkouts don't have it).
+
 Page types:
   - albums.yaml entries with `file:`  -> standalone album pages
   - albums.yaml entries with `hub:`   -> album sections on that hub page
@@ -21,6 +27,9 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEN = os.path.dirname(os.path.abspath(__file__))
 
+LINK_RE = re.compile(r'(?:href|src)="([^"]+)"')
+SKIP_SCHEMES = ("http://", "https://", "mailto:", "javascript:")
+
 
 def load_yaml(name):
     with open(os.path.join(GEN, name), encoding="utf-8") as f:
@@ -29,6 +38,29 @@ def load_yaml(name):
 
 def crlf(text):
     return text.replace("\r\n", "\n").replace("\n", "\r\n")
+
+
+def check_links(page_rel, html):
+    """Return [(page, url), ...] for internal links with no file on disk."""
+    missing = []
+    base_dir = os.path.dirname(page_rel)
+    for url in LINK_RE.findall(html):
+        if url.startswith(SKIP_SCHEMES) or url.startswith("#"):
+            continue
+        path = url.split("#", 1)[0]
+        if not path:
+            continue
+        if path.startswith("/"):
+            target = os.path.join(ROOT, path.lstrip("/"))
+        else:
+            target = os.path.join(ROOT, base_dir, path)
+        target = os.path.normpath(target)
+        if os.path.exists(target):
+            continue
+        if path.endswith(".mp3") and not os.path.exists(os.path.join(ROOT, "mp3")):
+            continue  # mp3 library not checked out here (e.g. CI) — unverifiable
+        missing.append((page_rel, url))
+    return missing
 
 
 def main():
@@ -45,8 +77,10 @@ def main():
     album_tpl = env.get_template("album.html")
 
     changed, unchanged = [], []
+    link_warnings = []
 
     def emit(relpath, text):
+        link_warnings.extend(check_links(relpath, text))
         text = crlf(text)
         path = os.path.join(ROOT, relpath)
         old = None
@@ -96,6 +130,18 @@ def main():
     print(f"changed: {len(changed)}  unchanged: {len(unchanged)}")
     for c in changed:
         print("  ~", c)
+
+    if link_warnings:
+        # dedupe, keep page order
+        seen = set()
+        unique = []
+        for w in link_warnings:
+            if w not in seen:
+                seen.add(w)
+                unique.append(w)
+        print(f"\nlink check: {len(unique)} internal link(s) point to missing files:")
+        for page, url in unique:
+            print(f"  ! {page} -> {url}")
 
 
 if __name__ == "__main__":
