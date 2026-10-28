@@ -71,3 +71,8 @@ Notes:
 ## Related infrastructure
 
 - Email `dwight@themelodydream.com` forwards to dwight.ivany@gmail.com via SES + S3 + Lambda, managed as code by the Pulumi project in `../acareability.com/iac` (state bucket: `s3://pulumi-state-328389220617`, stack `prod`).
+
+## Todo
+- [ ] fix AIF
+- [ ] fix top 10
+- [ ] fix mp3 media player
