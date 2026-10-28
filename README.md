@@ -68,6 +68,10 @@ Notes:
 - `Aif1.html` ("Ain't It Funny") was empty for years; its content was restored from `Albums/Aif2.inc` into `albums.yaml` (2026-10). It references `Lyrics/FoolsRushIn.html`, which doesn't exist yet — creating that lyrics page is a nice follow-up.
 - The page at `SummerTime1.html` is actually the Patio Winos album "2nd Floor Window" (page title metadata says "Lost Dog: Summertime" — historical mix-up, left as-is; data entry in `albums.yaml` is correct).
 
+## GitHub Actions deploy
+
+Pushing to `main` (or clicking "Run workflow" in the Actions tab) deploys automatically: `.github/workflows/deploy.yml` builds the site, assumes the IAM role `github-deploy-themelodydream` via OIDC (no stored AWS keys — the role only trusts pushes to this repo's `main` branch), syncs to the bucket with `--acl public-read`, and purges the CloudFront cache. The sync deliberately has **no `--delete`** — `mp3/` and `temp/` exist only in the bucket; use `cleanup-unused-images.sh` for deletions (it removes from both sides).
+
 ## Related infrastructure
 
 - Email `dwight@themelodydream.com` forwards to dwight.ivany@gmail.com via SES + S3 + Lambda, managed as code by the Pulumi project in `../acareability.com/iac` (state bucket: `s3://pulumi-state-328389220617`, stack `prod`).

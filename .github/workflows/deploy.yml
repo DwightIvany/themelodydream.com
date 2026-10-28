@@ -1,0 +1,53 @@
+name: Deploy to themelodydream.com
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allows manual "Run workflow" from the Actions tab
+
+permissions:
+  id-token: write     # required for OIDC
+  contents: read
+
+env:
+  BUCKET: s3://www.themelodydream.com
+  DISTRIBUTION_ID: E2K35AE45RTZGC
+  AWS_REGION: us-west-2
+  ROLE_ARN: arn:aws:iam::328389220617:role/github-deploy-themelodydream
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build deps
+        run: pip install -r generator/requirements.txt
+
+      - name: Build site
+        run: python generator/build.py
+
+      - name: Assume AWS role (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # No --delete on purpose: mp3/ and temp/ live only in the bucket
+      # (gitignored here). Deletions are handled manually by
+      # cleanup-unused-images.sh, which removes from both sides.
+      - name: Sync to S3
+        run: |
+          aws s3 sync . "$BUCKET" \
+            --exclude ".git*" \
+            --exclude ".github/*" \
+            --exclude ".venv/*" \
+            --exclude "generator/*" \
+            --acl public-read
+
+      - name: Purge CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
