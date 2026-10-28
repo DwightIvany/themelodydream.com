@@ -76,6 +76,8 @@ def main():
     for rel, meta in pages.items():
         with open(os.path.join(GEN, "src/pages", rel), encoding="utf-8") as f:
             frag = f.read().strip("\r\n")
+        if re.search(r"<[a-zA-Z][^>\r\n]*$", frag):
+            print(f"  ! warning: {rel} fragment ends with an unclosed tag (junk tail?)")
         extra = ""
         if meta.get("extra_head"):
             with open(os.path.join(GEN, "src/pages", rel + ".head"), encoding="utf-8") as f:
