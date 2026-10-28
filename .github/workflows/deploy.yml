@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          lfs: true   # required: images are LFS-tracked; default checkout leaves 130-byte pointer files
 
       - uses: actions/setup-python@v7
         with:
