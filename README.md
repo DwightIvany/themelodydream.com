@@ -15,21 +15,27 @@ Key facts:
 
 ## Sync commands (run in WSL, from this folder)
 
+Push local → bucket (after editing) — the easy way, correct flags baked in:
+
+```bash
+bash sync-to-aws.sh
+```
+
+Raw equivalent (note: `.git*` with NO slash — `.git/*` leaks `.gitignore` and `.gitattributes` to the public bucket):
+
+```bash
+aws s3 sync . s3://www.themelodydream.com --profile theme --exclude ".git*" --acl public-read
+```
+
 Pull bucket → local:
 
 ```bash
-aws s3 sync s3://www.themelodydream.com . --profile theme --exclude ".git/*"
+aws s3 sync s3://www.themelodydream.com . --profile theme --exclude ".git*"
 ```
 
-Push local → bucket (after editing):
-
-```bash
-aws s3 sync . s3://www.themelodydream.com --profile theme --exclude ".git/*" --acl public-read
-```
-
-- `--exclude ".git/*"` keeps git internals out of the bucket (and safe from any future `--delete`).
+- `--exclude ".git*"` keeps git internals AND git config files out of the bucket (and safe from any future `--delete`).
 - Add `--dryrun` to preview any sync before it runs.
-- This README uploads too — add `--exclude "README.md"` to the push if you'd rather keep it off the public site.
+- `bash sync-to-aws.sh --delete` also removes bucket objects that have no local file — use with care.
 
 ## Editing the site
 
