@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<track>
+		<path>mp3/AintItFunny.mp3</path>
+		<title>Ain't it Funny</title>
+	</track>
+	<track>
+		<path>mp3/ThatsNoWayToSayGoodbye.mp3</path>
+		<title>That's No Way To Say Goodbye</title>
+	</track>
+	<track>
+		<path>mp3/Uhaul.mp3</path>
+		<title>Uhaul</title>
+	</track>
+	<track>
+		<path>mp3/Blackbird.mp3</path>
+		<title>Blackbird</title>
+	</track>
+	<track>
+		<path>mp3/SummerTime.mp3</path>
+		<title>Summer Time</title>
+	</track>
+	<track>
+		<path>mp3/Ladybug.mp3</path>
+		<title>Ladybug</title>
+	</track>
+	<track>
+		<path>mp3/TableForTwo.mp3</path>
+		<title>Table for two</title>
+	</track>
+	<track>
+		<path>mp3/Levi.mp3</path>
+		<title>Levi</title>
+	</track>
+	<track>
+		<path>/mp3/Gospel.mp3</path>
+		<title>Gospel</title>
+	</track>
+	<track>
+		<path>mp3/Exotic.mp3</path>
+		<title>Exotic</title>
+	</track>
+</xml>
+
+
+
