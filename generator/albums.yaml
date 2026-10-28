@@ -1,13 +1,22 @@
-# Album data — single source of truth for album pages. Add an album here,
-# add its images, run build.py: page + sidebar + (future) discography all update.
+# Album data — single source of truth for album pages AND hub-page sections.
 #
-# Track fields: name (required), mp3, lyrics (optional link hrefs), raw
-# (optional: emit this exact HTML instead of a generated numbered line).
+# Track fields: name (required), mp3, lyrics (optional link hrefs), num
+# (optional display number override), raw (optional: emit this exact HTML
+# instead of a generated numbered line).
 # trailing: raw HTML emitted after the tracks </p> (disclaimers/credits).
+#
+# file:     generates a standalone album page at the repo root.
+# hub:      also render this album as a section on that hub page (LostDog.html).
+# hub_order: section order on the hub page.
+# anchor:   the <a name="..."> placed before the section (keep stable: links
+#           from the sidebar and other pages point at these).
 
 - name: Bull
   artist: Lost Dog
   file: Bull1.html
+  hub: lostdog
+  hub_order: 1
+  anchor: BullAlbum
   title: "Lost Dog: Bull"
   keywords: "bull, lost dog"
   cover: Bull.jpg
@@ -31,10 +40,12 @@
     Artwork by Ai<br>
     Produced by Dwight Ivany</p>
 
-
 - name: Artichoke Heart
   artist: Lost Dog
   file: ArtichokeHeart1.html
+  hub: lostdog
+  hub_order: 2
+  anchor: ArtichokeHeart
   title: "Lost Dog: Artichoke Heart"
   keywords: "artichoke heart, lost dog"
   cover: ArtichokeHeart.jpg
@@ -64,6 +75,9 @@
 - name: Flat Halley
   artist: Lost Dog
   file: FlatHalley1.html
+  hub: lostdog
+  hub_order: 6
+  anchor: FlatHalleyAlbum
   title: "Lost Dog: Flat Halley"
   keywords: "flat halley, lost dog"
   cover: FlatHalley72.jpg
@@ -123,6 +137,9 @@
 - name: Ain't It Funny
   artist: Dwight Ivany
   file: Aif1.html
+  hub: lostdog
+  hub_order: 3
+  anchor: Aif
   title: "Dwight Ivany: Ain&rsquo;t it Funny"
   keywords: "Dwight Ivany, Katie Ormiston, Eric Cotrell, Oliver Delorie"
   cover: Aif.jpg
@@ -153,3 +170,95 @@
     <a href="http://www.markberube.com" target="_blank">Mark Berube</a>, <a href="http://jasperchronicles.blogspot.com">Eric Lowe</a>,
     Carlin Sandor, Gordon Berry, Vern Beamish
     </p>
+
+- name: Summer Time
+  artist: Lost Dog
+  hub: lostdog
+  hub_order: 4
+  anchor: SummerTimeAlbum
+  cover: SummerTime.jpg
+  tracks:
+    - {name: Summertime, mp3: /mp3/SummerTime.mp3, lyrics: /Lyrics/SummerTime.html}
+    - {name: Ain't it funny, mp3: /mp3/AintItFunny.mp3, lyrics: Lyrics/AintItFunny.html}
+    - {name: What if god smoked cannabis, mp3: /mp3/WhatIfGodSmokedCannabis.mp3}
+    - {name: Wild Willy Wonka, mp3: /mp3/WildWillyWonka.mp3, lyrics: Lyrics/WildWillyWonka.html}
+    - {name: Exotic, mp3: /mp3/Exotic.mp3}
+    - {name: Beautiful Day, mp3: /mp3/BeautifulDay.mp3}
+    - {name: Irene's Cafe}
+    - {name: Table for two, mp3: /mp3/TableForTwo.mp3, lyrics: Lyrics/TableForTwo.html}
+    - {name: "Ladybug&nbsp;&nbsp;&nbsp; (Delorie)"}
+    - {name: "Just Until&nbsp;&nbsp;&nbsp; (Lee)"}
+    - {name: Fools rush in}
+    - {name: August Broken Heart}
+    - {name: Do What I Do}
+    - {name: Punch line, mp3: /mp3/PunchLine.mp3}
+  trailing: |
+    <p class="disclaimer">LDT64222<br>
+    &copy;2006 Al, Berube, Cottrell, Delorie, Doepker, Friesen, Gaum,
+    Ivany, Lee, Mackenzie, Ormiston, Osborne<br>
+    Artwork by Napoleon V<br>
+    Produced by Dwight Ivany<br>
+    </p>
+    <p class="disclaimer">Credits: <a href="http://www.cravery.com" target="_blank">C.R. Avery</a>, Carlin Sandor, Colin
+    Carrigan, Dennis Villanueva,
+    Dwight Ivany, Eric Cottrell, <a href="http://jasperchronicles.blogspot.com" target="_blank">Eric Lowe</a>, Gordon Berry, Jim English,
+    Kathleen Hovey, <a href="http://www.pawnshopdiamond.com" target="_blank">Katie Ormiston</a>, Keith Doepker, Kim Stewart, <a href="http://www.kingkonggirio.com" target="_blank">King Kong Girio</a>,
+    Lisa Mackenzie, <a href="http://www.markberube.com" target="_blank">Mark Berube</a>, Martin Jackson, Michael
+    Friesen, Michael Louw, Nicholas Simons, Oliver Delorie,
+    <a href="http://www.sageelectronics.com/bovasound" target="_blank">Philip Shaw Bova</a>, Phillip Victor Bova, Tom Fowler, Vern Beamish
+    </p>
+
+- name: Glazed Timbits
+  artist: Lost Dog
+  hub: lostdog
+  hub_order: 5
+  anchor: GlazedTimbitsAlbum
+  cover: GlazedTimbits.jpg
+  tracks:
+    - {name: Pastel Princess, mp3: /mp3/PastelPrincess.mp3, lyrics: Lyrics/PastelPrincess.html}
+    - {name: Cabbages Potatoes}
+    - {name: Cavers}
+    - {name: Wild Willy Wonka, mp3: /mp3/WildWillyWonka.mp3, lyrics: Lyrics/WildWillyWonka.html}
+    - {name: Pablo's Dream, mp3: /mp3/PablosDream.mp3, lyrics: Lyrics/PablosDream.html}
+    - {name: Charlie}
+    - {name: Cotton, num: "07"}
+    - {name: Jelly Bears, num: "08"}
+    - {name: Rocking Horse Rock, num: "09"}
+    - {name: Sunny Boy Floyd, num: "10"}
+    - {name: Sunny, num: "11"}
+    - {name: Coo Coo, num: "12", mp3: /mp3/CooCoo.mp3, lyrics: Lyrics/cooCoo.html}
+    - {name: Play with me, num: "13"}
+    - {name: Never was, num: "14"}
+    - {name: Last Rolling Stone, num: "15"}
+    - {name: Edward's Fish Tank, num: "16", lyrics: Lyrics/edwardsFishTank.html}
+    - {name: Hot Sex Stage, num: "17"}
+    - {name: Drink My Pint, num: "18"}
+    - {name: Moon Goddess, num: "19"}
+    - {name: John Hardy Banjo, num: "20"}
+  trailing: |
+    <p class="disclaimer">LDT52222<br>
+    &copy;2005 Bach, De Reland, Ivany, Miller, Pachebel, Smith, Sanderson, Assman, Smith<br>
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer"> Credits: Dwight Ivany, Corinne De Reland, Tom Smith, <a href="http://www.thedaphoenix.com" target="_blank">Theda Miller</a>, Joanne Coles, Charlie Assman,
+    <a href="http://www.myspace.com/pawnshopdiamond" target="_blank">Katie Ormiston</a>, Geoff Greene, Kris Mullaly, <a href="http://www.kingkonggirio.com" target="_blank">King Kong Girio</a></p>
+
+- name: Coquihalla Sky
+  artist: Lost Dog
+  hub: lostdog
+  hub_order: 7
+  anchor: CoquihallaSky
+  cover: CoquihallaSky.jpg
+  tracks:
+    - {name: Coquihalla Sky}
+    - {name: Waterdance}
+    - {name: Cup of Dreams}
+    - {name: Fallin' Hard}
+    - {name: Sweet Isabelle}
+    - {name: Waterdance}
+    - {name: Cradled}
+    - {name: Hot Sex Stage}
+  trailing: |
+    <p class="disclaimer">LDT43342<br>
+    &copy;2004 <a href="http://www.markberube.com" target="_blank">Berube</a>, Ivany<br>
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer"> Credits: Dwight Ivany, <a href="http://www.markberube.com" target="_blank">Mark Berube</a></p>

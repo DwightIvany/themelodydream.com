@@ -44,7 +44,8 @@ aws s3 sync s3://www.themelodydream.com . --profile theme --exclude ".git*"
 The site is **generated** — do not edit the `.html` files in the root by hand; they are build output.
 
 - **Layout, sidebar, footer, top bar**: `generator/site.yaml` — one edit rebuilds every page.
-- **Albums**: `generator/albums.yaml` — one entry per album (tracks, links, credits, cover, nav icon). Adding an album = add data + drop images in `Images/` + rebuild. The album page, sidebar icon, and (future) discography all come from the same entry.
+- **Albums**: `generator/albums.yaml` — one entry per album (tracks, links, credits, cover, nav icon). Adding an album = add data + drop images in `Images/` + rebuild. The album page, sidebar icon, and hub-page section all come from the same entry.
+- **Hub pages** (`LostDog.html`): assembled from `generator/src/pages/LostDog.html` (intro only) + every album entry carrying `hub: lostdog`, ordered by `hub_order`, each under its `anchor`. To feature an album there, add the three fields to its entry — never hand-edit the page.
 - **Other pages** (Bios, Disco, lyrics...): edit the matching fragment in `generator/src/pages/` (a page's unique HTML) and rebuild.
 - **Images**: covers `Images/<Name>.jpg`, nav thumbnails `Images/nav<Name>Close01.*`, mp3s in `mp3/`, lyrics in `Lyrics/`.
 - mp3/lyrics links on album tracks: set `mp3:` / `lyrics:` on the track in `albums.yaml`.

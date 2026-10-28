@@ -9,7 +9,7 @@ Bios1.html:                     {title: "Themelody Dream: Biography", footer: tr
 CrAvery.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true}
 Disco1.html:                    {title: "Themelody Dream: Discography", footer: true, extra_head: true}
 Disco2.html:                    {title: "Themelody Dream: Complete Discography", footer: true, extra_head: true}
-LostDog.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true}
+LostDog.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true, hub: lostdog}
 Lyrics/AintItFunny.html:        {title: "Dwight Ivany: Ain&rsquo;t it Funny", footer: true, extra_head: true}
 Lyrics/CupOfDreams.html:        {title: "Dwight Ivany: Cup of Dreams", footer: true, extra_head: true}
 Lyrics/Levi.html:               {title: "Dwight Ivany: Levi", footer: false, extra_head: true}
