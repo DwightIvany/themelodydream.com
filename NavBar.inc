@@ -1,0 +1,92 @@
+<div id="Header">
+<table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="2" style="white-space: nowrap; background-color: rgb(255, 128, 64); height: 40px; width: 600px;">
+	  &nbsp;&nbsp;<span class="navText1"><b>Themelody Dream</b>
+	  </span><span class="navText2"> | 
+	  <span class="style6">Song sculpture collaborative</span></span>
+	  </td>
+    </tr>
+
+    <tr>
+      <td style="background-color: rgb(255, 128, 64); width: 600px;" colspan="2" class="navText"
+		id="navigation" bgcolor="#5696cd" height="36" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/Disco1.html">DISCOGRAPHY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/Bios1.html">BIOS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/AboutUs.html">ABOUT US</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="Sidebar">
+<table style="text-align: left; width: 150px;" border="0" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="/dreams" target="_blank">
+	  <img style="top: 15px; left: 15px; width: 118px; height: 98px;" src="/Images/ThemelodyLogo200.gif"
+		alt="Themelody Logo" align="top" hspace="10" vspace="10"></a></td>
+    </tr>
+
+	
+    <tr>
+		<td style="width: 150px;"><a href="/ArtichokeHeart1.html">
+		<img style="width: 140px;" src="/Images/navArtichokeHeartClose01.gif"
+		  alt="navArtichokeHeartClose01.gif" hspace="0"></a>
+		<p class="caption">Artichoke Heart</p>
+		</td>
+    </tr>
+
+
+	
+	
+    <tr>
+      <td><a href="/LostDog.html#FlatHalleyAlbum"> <img style="width: 140px;" src="/Images/navFlatHalleyClose01.jpg"
+		 alt="navFlatHalleyClose01.jpg"></a>
+	  <p class="caption">Lost Dog: Flat Halley</p>
+	  </td>
+
+    <tr>
+      <td><a href="/CrAvery.html#HoboErotic"> <img style="width: 140px;" src="/Images/navHoboClose01.jpg"
+		 alt="navHoboClose01.jpg"></a>
+	  <p class="caption">CR Avery</p>
+	  </td>
+    </tr>
+	  
+    <tr>
+      <td><a href="/Disco1.html#SheWasTheLawAlbum"><img style="width: 140px;" src="/Images/navSheWasTheLawClose01.jpg"
+		 alt="navSheWasTheLawClose01.jpg"></a>
+	  <p class="caption">She was the Law</p>
+	  </td>
+    </tr>
+
+    <tr>
+	  <td><a href="/Disco1.html#AifAlbum"> <img style="width: 140px;" src="/Images/navAifClose01.jpg"
+		 alt="navAifClose01.jpg"></a>
+		 <p class="caption">Ain't if Funny</p>
+    </td>
+	</tr>
+
+    </tr>
+
+    <tr>
+      <td><a href="/LostDog.html#SummerTimeAlbum"> <img style="width: 140px;" src="/Images/navSummerTimeClose02.jpg"
+		 alt="navSummerTimeClose01.jpg"></a>
+		<p class="caption">Lost Dog:<br/>Summer Time</p>	  
+	  </td>
+    </tr>
+
+    <tr>
+      <td><a href="/Disco1.html#PipAlbum"> <img style="width: 140px;" src="/Images/navPipClose01.jpg"
+		 alt="navPipClose01.jpg"></a>
+	  <p class="caption">Dwight Ivany: Pip</p>
+	  </td>
+    </tr>
+  
+  </tbody>
+</table>
+<br>
+<br>
+</div>
