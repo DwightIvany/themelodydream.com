@@ -41,11 +41,32 @@ aws s3 sync s3://www.themelodydream.com . --profile theme --exclude ".git*"
 
 ## Editing the site
 
-- Album pages are self-contained `<Name>1.html` files in the root — model: `ArtichokeHeart1.html`, newest: `Bull1.html`.
-- Cover art goes in `Images/<Name>.jpg`; nav sidebar thumbnails are `Images/nav<Name>Close01.*` (gif/jpg).
-- mp3s live in `mp3/`, lyrics in `Lyrics/` — link them from the album page as the files appear (see Artichoke Heart for the pattern).
-- A new album page is not linked anywhere until you add it to the sidebar block (duplicated on every page) and the Discography page (`Disco1.html`).
-- `Albums/*.inc` are legacy PHP-era fragments. S3 cannot include them and nothing references them — history only.
+The site is **generated** — do not edit the `.html` files in the root by hand; they are build output.
+
+- **Layout, sidebar, footer, top bar**: `generator/site.yaml` — one edit rebuilds every page.
+- **Albums**: `generator/albums.yaml` — one entry per album (tracks, links, credits, cover, nav icon). Adding an album = add data + drop images in `Images/` + rebuild. The album page, sidebar icon, and (future) discography all come from the same entry.
+- **Other pages** (Bios, Disco, lyrics...): edit the matching fragment in `generator/src/pages/` (a page's unique HTML) and rebuild.
+- **Images**: covers `Images/<Name>.jpg`, nav thumbnails `Images/nav<Name>Close01.*`, mp3s in `mp3/`, lyrics in `Lyrics/`.
+- mp3/lyrics links on album tracks: set `mp3:` / `lyrics:` on the track in `albums.yaml`.
+
+## Building
+
+```bash
+python3 -m venv .venv && . .venv/bin/activate     # once
+pip install -r generator/requirements.txt          # once
+python generator/build.py                          # any time; reports changed files
+git diff                                           # review what will change on AWS
+bash sync-to-aws.sh                                # publish
+aws cloudfront create-invalidation --distribution-id E2K35AE45RTZGC --paths "/*" --profile theme
+```
+
+`build.py` writes plain static HTML (CRLF, UTF-8) to the repo root — S3 serves it as-is. Rebuilds are idempotent and report `changed: 0` when nothing is new. Generated pages are committed to git so diffs show exactly what will deploy.
+
+Notes:
+
+- `Albums/*.inc` are legacy PHP-era fragments, superseded by `generator/albums.yaml` — kept as history only.
+- `Aif1.html` ("Ain't It Funny") was empty for years; its content was restored from `Albums/Aif2.inc` into `albums.yaml` (2026-10). It references `Lyrics/FoolsRushIn.html`, which doesn't exist yet — creating that lyrics page is a nice follow-up.
+- The page at `SummerTime1.html` is actually the Patio Winos album "2nd Floor Window" (page title metadata says "Lost Dog: Summertime" — historical mix-up, left as-is; data entry in `albums.yaml` is correct).
 
 ## Related infrastructure
 

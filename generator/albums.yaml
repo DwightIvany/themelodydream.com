@@ -1,0 +1,151 @@
+# Album data — single source of truth for album pages. Add an album here,
+# add its images, run build.py: page + sidebar + (future) discography all update.
+#
+# Track fields: name (required), mp3, lyrics (optional link hrefs), raw
+# (optional: emit this exact HTML instead of a generated numbered line).
+# trailing: raw HTML emitted after the tracks </p> (disclaimers/credits).
+
+- name: Bull
+  artist: Lost Dog
+  file: Bull1.html
+  title: "Lost Dog: Bull"
+  keywords: "bull, lost dog"
+  cover: Bull.jpg
+  tracks:
+    - {name: Lay Your Weary Head}
+    - {name: Roll of your Eyes}
+    - {name: Itty Bitty Bull}
+    - {name: Ain't It Funny}
+    - {name: Birkenstock Feet}
+    - {name: Stereo on Repeat}
+    - {name: Give What You Need}
+    - {name: Netflix and Chill}
+    - {name: Fast Food Poetry}
+    - {name: Little Girl Ray}
+    - {name: Jelly Bear}
+    - {name: Paid by the Hour}
+    - {name: Hot Cup of Tea Honey}
+  trailing: |
+    <p class="disclaimer">&copy;2026 Themelody Dream</p>
+
+- name: Artichoke Heart
+  artist: Lost Dog
+  file: ArtichokeHeart1.html
+  title: "Lost Dog: Artichoke Heart"
+  keywords: "artichoke heart, lost dog"
+  cover: ArtichokeHeart.jpg
+  tracks:
+    - {name: Uhaul, mp3: /mp3/Uhaul.mp3, lyrics: /Lyrics/Uhaul.html}
+    - {name: "Mona Lisa's Eyes"}
+    - {name: River Shannon}
+    - {name: That's no way to say Goodbye, mp3: mp3/ThatsNoWayToSayGoodbye.mp3, lyrics: Lyrics/ThatsNoWayToSayGoodbye.html}
+    - {name: Charlie}
+    - {name: Pastel Princess}
+    - {name: Levi, mp3: mp3/Levi.mp3, lyrics: Lyrics/Levi.html}
+    - {name: Crying Now}
+    - {name: Thief in the Night}
+    - {name: Pin your hair up}
+    - {name: My Freind Pete}
+  trailing: |
+    <p class="disclaimer">LDT94022<br>
+    &copy;2009 Avery, Bell, Boothroyd,<br>
+    Cohen, Delorie, Hayashi, Ivany,<br>
+    Mojica, Pachabel, Wiebe<br><br>
+    Artwork by Ali Spagnola?<br>
+    Produced by Dwight Ivany</p>
+
+    <p class="disclaimer">Credits: Angela Hodgson, Blair Hayashi,, C.R. Avery, Craig Lapsley, David Mackenzie, Dwight Ivany, Gabe Boothroyd, Jim English, Kate Main, King Kong G&iacute;rio, Leo Bell, Linda Miller, Michael-Owen Liston, Nigel Mojica, Noah Walker, Oliver Delorie, Paul Mizgala, Paul Winterton, Zac Cornfield
+    </p>
+
+- name: Flat Halley
+  artist: Lost Dog
+  file: FlatHalley1.html
+  title: "Lost Dog: Flat Halley"
+  keywords: "flat halley, lost dog"
+  cover: FlatHalley72.jpg
+  tracks:
+    - {name: Ladybug, mp3: /mp3/Ladybug.mp3}
+    - {name: Old Blue, mp3: /mp3/OldBlue.mp3, lyrics: Lyrics/OldBlue.html}
+    - {name: 2nd floor window}
+    - {name: Bring a Li'l water Silvy, mp3: /mp3/BringALittleWaterSilvy.mp3}
+    - {name: Cup of dreams, mp3: /mp3/CupOfDreams.mp3, lyrics: Lyrics/CupOfDreams.html}
+    - {name: Order of Canada}
+    - {name: Pablo's dream, mp3: /mp3/PablosDream.mp3, lyrics: Lyrics/PablosDream.html}
+    - {name: Blackbird, mp3: /mp3/Blackbird.mp3}
+    - {name: Sonatina in Em}
+    - {name: Where ever you go}
+    - {name: Three young ladies}
+    - {name: Do as you please, mp3: /mp3/DoAsYouPlease.mp3}
+    - {name: Pin your hair up, mp3: /mp3/PinYourHairUp2.mp3}
+    - {name: 11x14}
+    - {name: Watch the snow fall down, mp3: /mp3/WatchTheSnowFallDown.mp3}
+  trailing: |
+    <p class="disclaimer">LDT42342<br>
+    &copy;2004 Delorie, Ivany, Sandor, Lenon , McCartney, Ormiston<br>
+    Artwork: Halley Taylor<br>
+    Produced by: Dwight Ivany</p>
+    <p class="disclaimer"> Credits: <a href="http://www.cravery.com" target="_blank">C.R. Avery</a>, Carlin Sandor, Claude Debussy, Dwight Ivany,
+    Geoff Greene, James Stephens, Jenny Young, Jim English,
+    <a href="http://www.pawnshopdiamond.com" target="_blank">Katie Ormiston</a>, Kris Mullaly, Linda Miller,
+    Little Dave, <a href="http://www.markberube.com" target="_blank">Mark Berube</a>, Mark Campbell,
+    <a href="http://monicaleemusic.com" target="_blank">Monica Lee</a>, Oliver Delorie, Tyler Simpson</p>
+
+- name: 2nd Floor Window
+  artist: Patio Winos
+  file: SummerTime1.html
+  title: "Lost Dog: Summertime"
+  keywords: "summer time, lost dog"
+  cover: 2ndFloorWindow.jpg
+  tracks:
+    - {name: Feed the Cat}
+    - {name: Sweet Isabelle, mp3: /mp3/SweetIsabelle.mp3}
+    - {name: 2nd Floor Window, mp3: /mp3/2ndFloorWindow.mp3}
+    - {name: Favorite Things}
+    - {name: India}
+    - {name: Sleeping Alone}
+    - {name: Not In Mind}
+    - {name: One Soldier, mp3: /mp3/OneSoldier.mp3}
+    - {name: Nothing's Ever Wrong}
+    - {name: Tim Horton's}
+    - {name: India}
+    - {name: Scandinavia, mp3: /mp3/Scandinavia.mp3}
+    - {name: When I'm Gone}
+  trailing: |
+    <p class="disclaimer">PWT33012<br>
+    &copy;2003 Berube, Avery, Ormiston, Sandor<br>
+    Produced by Dwight Ivany &amp; the Patio Winos</p>
+    <p class="disclaimer">Credits: <a href="http://www.cravery.com" target="_blank">C.R. Avery</a>, Carlin Sandor, Dwight Ivany, <a href="http://www.pawnshopdiamond.com" target="_blank">Katie Ormiston</a>, <a href="http://www.markberube.com" target="_blank">Mark Berube</a></p>
+
+- name: Ain't It Funny
+  artist: Dwight Ivany
+  file: Aif1.html
+  title: "Dwight Ivany: Ain&rsquo;t it Funny"
+  keywords: "Dwight Ivany, Katie Ormiston, Eric Cotrell, Oliver Delorie"
+  cover: Aif.jpg
+  tracks:
+    - raw: |
+        1. Ain&rsquo;t it Funny (Ivany) <a href="mp3/AintItFunny.mp3">mp3</a><br>
+        &nbsp;&nbsp;<a href="Lyrics/AintItFunny.html">lyrics</a> Dwight&rsquo;s <a href="Bios1.html#DwightIvanyBio">bio</a><br>
+    - raw: |
+        2. Fools Rush In (Ormiston) <a href="mp3/FoolsRushIn.mp3">mp3</a><br>
+        &nbsp;&nbsp;<a href="Lyrics/FoolsRushIn.html">lyrics</a> Katie&rsquo;s <a href="Bios1.html#KatieOrmistonBio">bio</a><br>
+    - {name: Ladybug (Delorie), mp3: mp3/Ladybug.mp3}
+    - raw: |
+        4. Summertime (Cottrell) <a href="mp3/SummerTime.mp3">mp3</a><br>
+        &nbsp;&nbsp;<a href="Lyrics/SummerTime.html">lyrics</a> Eric&rsquo;s <a href="http://www.shewasthelaw.com/who.html" target="_blank">bio</a><br>
+  trailing: |
+    <br>
+    <br>
+    <p class="disclaimer">DIT81222<br>
+    &copy;2008 Ivany, Ormiston, Delorie, Cotrell<br>
+    Artwork: Jocelyn Dobbin<br>
+    Produced by Dwight Ivany<br>
+    </p>
+    <br>
+    <p class="disclaimer">
+    Credits: Dwight Ivany, <a href="http://www.myspace.com/pawnshopdiamond" target="_blank">Katie Ormiston</a>, Oliver Delorie, Eric Cottrell, Jim English, Colin Carrigan,
+    <a href="http://www.sageelectronics.com/bovasound" target="_blank">Philip Shaw Bova</a>, Phillip Victor Bova, Tom Fowler,
+    <a href="http://twitter.com/antlersanchors" target="_blank">Michael-Owen Liston</a>, <a href="http://www.cravery.com">C.R. Avery</a>,
+    <a href="http://www.markberube.com" target="_blank">Mark Berube</a>, <a href="http://jasperchronicles.blogspot.com">Eric Lowe</a>,
+    Carlin Sandor, Gordon Berry, Vern Beamish
+    </p>

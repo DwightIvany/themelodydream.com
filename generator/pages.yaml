@@ -1,0 +1,28 @@
+# Content pages: content lives in src/pages/<name>.html (the page's unique
+# HTML, extracted verbatim). extra_head: true = also splice src/pages/<name>.html.head
+# (per-page meta tags). footer: false = omit the footer block.
+# To edit one of these pages, edit its fragment and rebuild.
+
+index.html:                     {title: "Themelody Dream: Home", footer: true, extra_head: true}
+AboutUs.html:                   {title: "Themelody Dream: About Us", footer: true, extra_head: true}
+Bios1.html:                     {title: "Themelody Dream: Biography", footer: true, extra_head: true}
+CrAvery.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true}
+Disco1.html:                    {title: "Themelody Dream: Discography", footer: true, extra_head: true}
+Disco2.html:                    {title: "Themelody Dream: Complete Discography", footer: true, extra_head: true}
+LostDog.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true}
+Lyrics/AintItFunny.html:        {title: "Dwight Ivany: Ain&rsquo;t it Funny", footer: true, extra_head: true}
+Lyrics/CupOfDreams.html:        {title: "Dwight Ivany: Cup of Dreams", footer: true, extra_head: true}
+Lyrics/Levi.html:               {title: "Dwight Ivany: Levi", footer: false, extra_head: true}
+Lyrics/Mona.html:               {title: "Dwight Ivany: Ain&rsquo;t it Funny", footer: false, extra_head: true}
+Lyrics/OldBlue.html:            {title: "Dwight Ivany: Old Blue", footer: true, extra_head: true}
+Lyrics/PablosDream.html:        {title: "Dwight Ivany: Pablo&#146;s Dream", footer: true, extra_head: true}
+Lyrics/PastelPrincess.html:    {title: "Dwight Ivany: Pastel Princess", footer: false, extra_head: true}
+Lyrics/PinYourHairUp.html:      {title: "Lost Dog: Pin your hair up", footer: true, extra_head: true}
+Lyrics/SummerTime.html:         {title: "She was the Law: Summer Time", footer: true, extra_head: false}
+Lyrics/TableForTwo.html:        {title: "Dwight Ivany: Table for two", footer: true, extra_head: true}
+Lyrics/ThatsNoWayToSayGoodbye.html: {title: "That's no way to say goodbye", footer: false, extra_head: true}
+Lyrics/Uhaul.html:              {title: "Lost Dog: Uhaul Lyrics", footer: false, extra_head: true}
+Lyrics/WildWillyWonka.html:     {title: "Dwight Ivany: Wild Willy Wonka", footer: true, extra_head: true}
+Lyrics/cooCoo.html:             {title: "Dwight Ivany: Coo Coo", footer: true, extra_head: true}
+Lyrics/edwardsFishTank.html:    {title: "Dwight Ivany: Edward&rsquo;s Fish Tank", footer: false, extra_head: true}
+Lyrics/jellyBear.html:          {title: "Dwight Ivany: Jelly Bear", footer: false, extra_head: true}

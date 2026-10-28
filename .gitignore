@@ -16,3 +16,6 @@ desktop.ini
 /mp3/
 /temp/
 
+# Python build venv
+.venv/
+

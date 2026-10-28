@@ -1,0 +1,14 @@
+<h2>{{ a.artist }}<br>
+{{ a.name }}</h2>
+<img class="albumCover" src="Images/{{ a.cover }}" alt="">
+
+<p>
+{%- for t in a.tracks %}
+{%- if t.raw is defined %}
+{{ t.raw -}}
+{%- else %}
+	{{ loop.index }}. {{ t.name }}{% if t.mp3 is defined %} <a href="{{ t.mp3 }}">mp3</a>{% endif %}{% if t.lyrics is defined %} <a href="{{ t.lyrics }}">lyrics</a>{% endif %}{% if not loop.last %}<br>
+{% endif %}
+{%- endif %}
+{%- endfor %}</p>
+{{ a.trailing -}}

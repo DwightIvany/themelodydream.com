@@ -27,6 +27,8 @@ fi
 aws s3 sync . s3://www.themelodydream.com \
     --profile theme \
     --exclude ".git*" \
+    --exclude ".venv/*" \
+    --exclude "generator/*" \
     --acl public-read \
     "${EXTRA[@]}"
 

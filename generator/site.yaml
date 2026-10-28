@@ -1,0 +1,31 @@
+# Site-wide strings and left-nav data. Edit here; build.py applies everywhere.
+
+header:
+  brand: Themelody Dream
+  tagline: Song sculpture collaborative
+  nav_links:
+    - {label: HOME, href: /index.html}
+    - {label: DISCOGRAPHY, href: /Disco1.html}
+    - {label: BIOS, href: /Bios1.html}
+    - {label: ABOUT US, href: /AboutUs.html}
+
+logo:
+  href: /dreams
+  src: /Images/ThemelodyLogo200.gif
+  alt: Themelody Logo
+
+# Left sidebar album icons, top to bottom. href/img/caption per entry.
+sidebar:
+  - {href: /Bull1.html, img: navBull01.jpg, caption: Bull}
+  - {href: /ArtichokeHeart1.html, img: navArtichokeHeartClose01.gif, caption: Artichoke Heart}
+  - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg, caption: "Lost Dog: Flat Halley"}
+  - {href: /CrAvery.html#HoboErotic, img: navHoboClose01.jpg, caption: CR Avery}
+  - {href: /Disco1.html#SheWasTheLawAlbum, img: navSheWasTheLawClose01.jpg, caption: She was the Law}
+  - {href: /Disco1.html#AifAlbum, img: navAifClose01.jpg, caption: Ain't if Funny}
+  - {href: /LostDog.html#SummerTimeAlbum, img: navSummerTimeClose02.jpg, caption: "Lost Dog:<br/>Summer Time"}
+  - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg, caption: "Dwight Ivany: Pip"}
+
+footer:
+  copyright_year: 2019
+  version: "1.1"
+  contact_email: dwight.ivany@gmail.com

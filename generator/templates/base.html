@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <title>{{ title }}</title>
+{%- if keywords %}
+  <meta name="keywords" content="{{ keywords }}">
+{%- endif %}
+{%- if extra_head %}
+{{ extra_head }}
+{%- endif %}
+  <link rel="stylesheet" href="Themelody.css" type="text/css">
+</head>
+
+<body>
+
+	<div id="Header">
+	<table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+	  <tbody>
+	    <tr>
+	      <td colspan="2" style="white-space: nowrap; background-color: rgb(255, 128, 64); height: 40px; width: 600px;">
+		  &nbsp;&nbsp;<span class="navText1"><b>{{ site.header.brand }}</b>
+		  </span><span class="navText2"> |
+		  <span class="style6">{{ site.header.tagline }}</span></span>
+		  </td>
+	    </tr>
+
+	    <tr>
+	      <td style="background-color: rgb(255, 128, 64); width: 600px;" colspan="2" class="navText"
+			id="navigation" bgcolor="#5696cd" height="36" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      {%- for l in site.header.nav_links %}<a href="{{ l.href }}">{{ l.label }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% endfor %}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	</div>
+
+	<div id="Sidebar">
+	<table style="text-align: left; width: 150px;" border="0" cellpadding="4" cellspacing="0">
+	  <tbody>
+	    <tr>
+	      <td><a href="{{ site.logo.href }}" target="_blank">
+		  <img style="top: 15px; left: 15px; width: 118px; height: 98px;" src="{{ site.logo.src }}"
+			alt="{{ site.logo.alt }}" align="top" hspace="10" vspace="10"></a></td>
+	    </tr>
+
+	    {%- for item in site.sidebar %}
+	    <tr>
+			<td style="width: 150px;"><a href="{{ item.href }}">
+			<img style="width: 140px;" src="/Images/{{ item.img }}"
+			  alt="{{ item.img }}" hspace="0"></a>
+			<p class="caption">{{ item.caption }}</p>
+			</td>
+	    </tr>
+	    {%- endfor %}
+
+	  </tbody>
+	</table>
+	<br>
+	<br>
+	</div>
+
+<div id="Content">{{ content }}
+	</div>
+{% if footer %}
+<div id="Footer">
+	<hr />
+	<p class="disclaimer">Copyright &copy;{{ site.footer.copyright_year }} Themelody Dream<br />
+	Version {{ site.footer.version }}</p>
+	<p> Contact: <a href="mailto:{{ site.footer.contact_email }}">{{ site.footer.contact_email }}</a><br />
+	<a href="http://www.themelodydream.com">www.themelodydream.com</a></p>
+</div>
+{% endif %}
+</body>
+</html>
