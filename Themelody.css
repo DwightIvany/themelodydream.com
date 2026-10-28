@@ -146,17 +146,16 @@
 	}
 	
   #Footer { margin: 0px 0px 0px 150px;
-    width: 600px;}
+    width: 600px;
+    clear: both;}
 
   #Content { margin: 0px 0px 0px 160px;
     width: 600px;
 	}
 
   #Sidebar { border-style: none;
-    position: absolute;
+    float: left;
     padding: 0px;
-    top: 0px;
-    left: 0px;
     width: 150px;
     background-color: rgb(0, 124, 195);
     }
