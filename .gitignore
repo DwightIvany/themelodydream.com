@@ -4,3 +4,15 @@
 
 # Python bytecode
 __pycache__/
+*.pyc
+*.exe
+
+# Common Windows
+desktop.ini
+.obsidian/
+.~lock.*#
+
+# Ignore folders
+/mp3/
+/temp/
+
