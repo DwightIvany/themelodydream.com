@@ -29,3 +29,13 @@ footer:
   copyright_year: 2019
   version: "1.1"
   contact_email: dwight.ivany@gmail.com
+
+# Hub pages: order of album sections on each. Albums not listed here render
+# after the listed ones, in albums.yaml order.
+hubs:
+  lostdog:
+    order: [Bull, "Artichoke Heart", "Ain't It Funny", "Summer Time", "Glazed Timbits", "Flat Halley", "Coquihalla Sky"]
+  disco1:
+    order: ["Artichoke Heart", "Ain't It Funny", "Summer Time", "She Was the Law", "Daddy's Little Girl", "2nd Floor Window", "Flat Halley", "Speak of the Devil", "Sally Ann Xmas", "Glazed Timbits", "Pip"]
+  cravery:
+    order: ["Hobo Erotic", "Speak of the Devil", "2nd Floor Window"]

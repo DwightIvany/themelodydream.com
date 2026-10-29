@@ -6,16 +6,20 @@
 # trailing: raw HTML emitted after the tracks </p> (disclaimers/credits).
 #
 # file:     generates a standalone album page at the repo root.
-# hub:      also render this album as a section on that hub page (LostDog.html).
-# hub_order: section order on the hub page.
-# anchor:   the <a name="..."> placed before the section (keep stable: links
-#           from the sidebar and other pages point at these).
+# hub:      list of hub pages that include this album as a section
+#           (hub pages: LostDog.html=lostdog, Disco1.html=disco1, CrAvery.html=cravery).
+# anchor:   the <a name="..."> before a hub section. Plain scalar = same on all
+#           hubs; dict = per-hub (e.g. {lostdog: Aif, disco1: AifAlbum}).
+#           Keep stable — sidebar and other pages link to these.
+# h2_raw:   optional verbatim <h2> HTML for albums whose heading isn't the
+#           standard "Artist<br>Name" (linked artist names, cover inside h2).
+# cover:    album cover image under Images/ (omit if the cover lives in h2_raw).
+# Order of sections on each hub page: site.yaml -> hubs.<name>.order.
 
 - name: Bull
   artist: Lost Dog
   file: Bull1.html
-  hub: lostdog
-  hub_order: 1
+  hub: [lostdog]
   anchor: BullAlbum
   title: "Lost Dog: Bull"
   keywords: "bull, lost dog"
@@ -43,8 +47,7 @@
 - name: Artichoke Heart
   artist: Lost Dog
   file: ArtichokeHeart1.html
-  hub: lostdog
-  hub_order: 2
+  hub: [lostdog, disco1]
   anchor: ArtichokeHeart
   title: "Lost Dog: Artichoke Heart"
   keywords: "artichoke heart, lost dog"
@@ -75,8 +78,7 @@
 - name: Flat Halley
   artist: Lost Dog
   file: FlatHalley1.html
-  hub: lostdog
-  hub_order: 6
+  hub: [lostdog, disco1]
   anchor: FlatHalleyAlbum
   title: "Lost Dog: Flat Halley"
   keywords: "flat halley, lost dog"
@@ -111,6 +113,8 @@
 - name: 2nd Floor Window
   artist: Patio Winos
   file: SummerTime1.html
+  hub: [disco1, cravery]
+  anchor: {disco1: 2ndFloorWindowAlbum, cravery: "2nd Floor Window"}
   title: "Lost Dog: Summertime"
   keywords: "summer time, lost dog"
   cover: 2ndFloorWindow.jpg
@@ -137,9 +141,8 @@
 - name: Ain't It Funny
   artist: Dwight Ivany
   file: Aif1.html
-  hub: lostdog
-  hub_order: 3
-  anchor: Aif
+  hub: [lostdog, disco1]
+  anchor: {lostdog: Aif, disco1: AifAlbum}
   title: "Dwight Ivany: Ain&rsquo;t it Funny"
   keywords: "Dwight Ivany, Katie Ormiston, Eric Cotrell, Oliver Delorie"
   cover: Aif.jpg
@@ -159,8 +162,7 @@
 
 - name: Summer Time
   artist: Lost Dog
-  hub: lostdog
-  hub_order: 4
+  hub: [lostdog, disco1]
   anchor: SummerTimeAlbum
   cover: SummerTime.jpg
   tracks:
@@ -196,8 +198,7 @@
 
 - name: Glazed Timbits
   artist: Lost Dog
-  hub: lostdog
-  hub_order: 5
+  hub: [lostdog, disco1]
   anchor: GlazedTimbitsAlbum
   cover: GlazedTimbits.jpg
   tracks:
@@ -230,8 +231,7 @@
 
 - name: Coquihalla Sky
   artist: Lost Dog
-  hub: lostdog
-  hub_order: 7
+  hub: [lostdog]
   anchor: CoquihallaSky
   cover: CoquihallaSky.jpg
   tracks:
@@ -248,3 +248,156 @@
     &copy;2004 <a href="http://www.markberube.com" target="_blank">Berube</a>, Ivany<br>
     Produced by Dwight Ivany</p>
     <p class="disclaimer"> Credits: Dwight Ivany, <a href="http://www.markberube.com" target="_blank">Mark Berube</a></p>
+
+- name: She Was the Law
+  hub: [disco1]
+  anchor: SheWasTheLawAlbum
+  h2_raw: |
+    <h2><a href="http://www.shewasthelaw.com/who.html">She
+    Was The Law</a></h2>
+  cover: SheWasTheLaw.jpg
+  tracks:
+    - {name: Your Story}
+    - {name: Summertime, mp3: /mp3/SummerTime.mp3, lyrics: /Lyrics/SummerTime.html}
+    - {name: August Broken Heart, mp3: /mp3/AugustBrokenHeart.mp3}
+    - {name: See Song}
+    - {name: Man Pines}
+    - {name: Presence, mp3: /mp3/Presence.mp3}
+    - {name: Apocalypso}
+    - {name: Need}
+  trailing: |
+    <p class="disclaimer">SWTL05001<br>
+    &copy;2005 Cottrell<br>
+    Produced by Eric Cottrell</p>
+    <p>Please visit <a href="https://open.spotify.com/album/3rHVcyrK2v0OsO4N4aayUs" target="_blank">She Was the Law web site</a> for a more.</p>
+
+- name: Daddy's Little Girl
+  hub: [disco1]
+  anchor: DaddysLittleGirlAlbum
+  h2_raw: |
+    <h2><a href="http://www.myspace.com/pawnshopdiamond">Katie Ormiston</a><br />
+    Daddy's Little Girl</h2>
+  cover: DaddysGirl.jpg
+  tracks:
+    - {name: "Phone Message #1"}
+    - {name: Spoonful of Sugar}
+    - {name: 11 X 14}
+    - {name: India}
+    - {name: Not in Mind}
+    - {name: Pinocchio}
+    - {name: Favorite Things}
+    - {name: Wherever You Go}
+    - {name: "Phone Message #2"}
+    - {name: "Irene&rsquo;s Caf&eacute"}
+    - {name: Fools Rush In}
+  trailing: |
+    <p class="disclaimer">KOT44422<br />
+    All songs &copy;2004 Ormiston<br />
+    except <i>Irene&rsquo;s Caf&eacute;</i>
+    &copy;Ormiston, Ivany, Doepker<br />
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer">Credits:
+    <a href="http://www.cravery.com" target="_blank">C.R. Avery</a>, <a href="http://www.markberube.com" target="_blank">Mark Berube</a>, Keith Doepker, Eric Cottrell, <a href="http://twitter.com/antlersanchors" target="_blank">Michael-Owen Liston</a>, <a href="http://www.pawnshopdiamond.com" target="_blank">Katie Ormiston</a>, Sandy Ormiston aka Dad, Carlin Sandor, Witches of Woodland
+    </p>
+    <p class="disclaimer">Many thanks to family and friends for the love, support and inspiration they bring to my life. Special mention and sincere gratitude to Dwight, the players, the Patio Winos, and the Witches of Woodland for helping this sparrow learn to sing.</p>
+
+- name: Speak of the Devil
+  hub: [disco1, cravery]
+  anchor: SpeakOfTheDevilAlbum
+  h2_raw: |
+    <h2><a href="http://www.cravery.com">CR Avery</a><br>
+    Speak of the Devil</h2>
+  cover: SpeakOfTheDevil.jpg
+  tracks:
+    - {name: Prologue}
+    - {name: Only take what you need}
+    - {name: Farm Boy}
+    - {name: Dairy Cow blues, mp3: /mp3/DairyCow.mp3}
+    - {name: Bring a Li'l Water Silvy, mp3: /mp3/BringALittleWaterSilvy.mp3}
+    - {name: Council for the Arts}
+    - {name: Disclosure -southside remix}
+    - {name: Go Team}
+    - {name: Forbidden Love Blues}
+    - {name: Blackbird, mp3: /mp3/Blackbird.mp3}
+    - {name: Black is the Night}
+    - {name: When I'm gone I'll be gone}
+    - {name: Woman on a couch}
+  trailing: |
+    <p class="disclaimer">AVE42222<br>
+    &copy;2004 Avery<br>
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer">Credits: <a href="http://www.cravery.com" target="_blank">C.R. Avery</a> David Herbert, Jesse Waldman, Michael Simpson, <a href="http://monicaleemusic.com" target="_blank">Monica Lee</a>, Noah Walker, Stephen Drake, Tyler Simpson</p>
+
+- name: Sally Ann Xmas
+  hub: [disco1]
+  anchor: SallyAnnXmasAlbum
+  h2_raw: |
+    <h2><a href="http://www.markberube.com">Mark Berube</a><br>
+    <img class="albumCover" src="Images/SallyAnnXmas.jpg" alt=""> Sally Ann Xmas</h2>
+  tracks:
+    - {name: Sally Ann Xmas, mp3: /mp3/SallyAnnXmas.mp3}
+    - {name: Watch The Snow Fall Down, mp3: /mp3/WatchTheSnowFallDown.mp3}
+    - {name: All of You}
+    - {name: "Yuppies &amp; Hippies"}
+    - {name: Punch Line, mp3: /mp3/PunchLine.mp3}
+  trailing: |
+    <p class="disclaimer">PWT34112<br>
+    &copy;2003 Berube<br>
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer"> Credits: Dwight Ivany, <a href="http://www.markberube.com" target="_blank">Mark Berube</a></p>
+
+- name: Pip
+  artist: Dwight Ivany
+  hub: [disco1]
+  anchor: PipAlbum
+  cover: Pip.jpg
+  tracks:
+    - {name: Table for two, mp3: mp3/TableForTwo.mp3, lyrics: Lyrics/TableForTwo.html}
+    - {name: "Ain&rsquo;t it Funny", mp3: mp3/AintItFunny.mp3, lyrics: Lyrics/AintItFunny.html}
+    - {name: Who Knows, mp3: mp3/WhoKnows.mp3}
+    - {name: Rocking Horses}
+    - {name: Light Blue}
+    - {name: Pin your hair up, mp3: mp3/PinYourHairUp1.mp3}
+    - {name: Jody}
+    - {name: Fade Away, mp3: mp3/FadeAway.mp3}
+    - {name: Thief in the Night, mp3: mp3/ThiefInTheNight.mp3}
+    - {name: Stone Cold Blue}
+    - {name: Old Blue}
+  trailing: |
+    <p class="disclaimer">DIT41222<br>
+    &copy;2000 Ivany<br>
+    Artwork: Jocelyn Dobbin<br>
+    Produced by Dwight Ivany and Jim English<br>
+    Mastered by Brett Zilahi<br>
+    </p>
+    <p class="disclaimer">
+    Credits: Dwight Ivany, Jim English, Colin Carrigan, Kris Mullaly, <a href="http://www.kingkonggirio.com" target="_blank">King Kong Girio</a>, <a href="http://www.sageelectronics.com/bovasound" target="_blank">Philip Shaw Bova</a>, Phillip Victor Bova, Tom Fowler, Geoff Greene, Craig Lapsley, Jack Daw, Linda Miller, James Stephens, Pete Janes, Joanne Coles
+    </p>
+
+- name: Hobo Erotic
+  hub: [cravery]
+  anchor: HoboErotic
+  h2_raw: |
+    <h2><a href="http://www.cravery.com">CR Avery</a><br>
+    Hobo Erotic</h2>
+  cover: HoboErotic.jpg
+  tracks:
+    - {name: Silvee}
+    - {name: Chain Smokin}
+    - {name: Dear Colonel}
+    - {name: Early Morning Rain}
+    - {name: One Redeeming Feature}
+    - {name: Folk Singer}
+    - {name: Qui Ca}
+    - {name: Gospel According to the Purple Cotton Dress, mp3: /mp3/Gospel.mp3}
+    - {name: Seattle}
+    - {name: Things Have Changed, mp3: /mp3/ThingsHaveChanged.mp3}
+    - {name: Door By The River, mp3: /mp3/DoorByTheRiver.mp3}
+    - {name: Homeless}
+    - {name: Lately all I do}
+  trailing: |
+    <p class="disclaimer">AVE14012<br>
+    &copy;2011 Avery<br>
+    Produced by Dwight Ivany</p>
+    <p class="disclaimer">Credits: <a href="http://www.cravery.com" target="_blank">C.R. Avery</a>, Noah Walker, Paul Surjadinata, David "Doc" Herbert, Shauna Powers, Michael Wilson, Chris Hayes Carl Shuba, Kevin Suggs, Neal Miskin,
+    <a href="http://www.thesojourners.ca" target="_blank">The Sojourners</a>, <a href="http://www.nproductions.org" target="_blank">Matthew Rogers</a>, Meredith Bates, Finn Manniche, Marcus Takizawa, Cam Wilson, <a href="http://www.myspace.com/mikesouthworth" target="_blank">Mike Southworth</a>, Paul Baker, Brian Parnell, Tully Ivany</p>

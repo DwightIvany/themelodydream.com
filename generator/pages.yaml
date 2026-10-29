@@ -6,8 +6,8 @@
 index.html:                     {title: "Themelody Dream: Home", footer: true, extra_head: true}
 AboutUs.html:                   {title: "Themelody Dream: About Us", footer: true, extra_head: true}
 Bios1.html:                     {title: "Themelody Dream: Biography", footer: true, extra_head: true}
-CrAvery.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true}
-Disco1.html:                    {title: "Themelody Dream: Discography", footer: true, extra_head: true}
+CrAvery.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true, hub: cravery}
+Disco1.html:                    {title: "Themelody Dream: Discography", footer: true, extra_head: true, hub: disco1}
 Disco2.html:                    {title: "Themelody Dream: Complete Discography", footer: true, extra_head: true}
 LostDog.html:                   {title: "Themelody Dream: Lost Dog", footer: true, extra_head: true, hub: lostdog}
 Lyrics/AintItFunny.html:        {title: "Dwight Ivany: Ain&rsquo;t it Funny", footer: true, extra_head: true}

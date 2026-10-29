@@ -14,8 +14,11 @@ are skipped. mp3 links are only checked when the local mp3/ folder exists
 
 Page types:
   - albums.yaml entries with `file:`  -> standalone album pages
-  - albums.yaml entries with `hub:`   -> album sections on that hub page
-  - pages.yaml entries with `hub:`    -> hub pages: intro fragment + album sections
+  - albums.yaml entries with `hub:`   -> album sections on those hub pages
+  - pages.yaml entries with `hub:`    -> hub pages: intro fragment + album
+                                         sections (ordered by site.yaml
+                                         hubs.<name>.order) + optional
+                                         <page>.outro fragment
   - other pages.yaml entries          -> intro/content fragment wrapped in the shell
 """
 import os
@@ -38,6 +41,11 @@ def load_yaml(name):
 
 def crlf(text):
     return text.replace("\r\n", "\n").replace("\n", "\r\n")
+
+
+def album_hubs(a):
+    h = a.get("hub") or []
+    return [h] if isinstance(h, str) else list(h)
 
 
 def check_links(page_rel, html):
@@ -95,8 +103,15 @@ def main():
             f.write(text)
         changed.append(relpath)
 
-    def album_section(a):
-        anchor = a.get("anchor") or re.sub(r"[^A-Za-z0-9]", "", a["name"]) + "Album"
+    def album_section(a, hub):
+        anchor = None
+        a_anchor = a.get("anchor")
+        if isinstance(a_anchor, dict):
+            anchor = a_anchor.get(hub)
+        elif a_anchor:
+            anchor = a_anchor
+        if not anchor:
+            anchor = re.sub(r"[^A-Za-z0-9]", "", a["name"]) + "Album"
         return '<a name="%s"></a>\n%s' % (anchor, album_tpl.render(a=a).strip("\n"))
 
     for a in albums:
@@ -117,10 +132,21 @@ def main():
             with open(os.path.join(GEN, "src/pages", rel + ".head"), encoding="utf-8") as f:
                 extra = f.read().strip("\r\n")
         if meta.get("hub"):
-            sections = sorted(
-                (a for a in albums if a.get("hub") == meta["hub"]),
-                key=lambda a: a.get("hub_order", 999))
-            content = "\n".join([frag] + [album_section(a) for a in sections])
+            hub = meta["hub"]
+            hub_cfg = (site.get("hubs") or {}).get(hub) or {}
+            order = hub_cfg.get("order") or []
+            sections = [a for a in albums if hub in album_hubs(a)]
+            sections.sort(key=lambda a: (
+                order.index(a["name"]) if a["name"] in order else 500,
+                a["name"]))
+            parts = [frag] + [album_section(a, hub) for a in sections]
+            outro_path = os.path.join(GEN, "src/pages", rel + ".outro")
+            if os.path.exists(outro_path):
+                with open(outro_path, encoding="utf-8") as f:
+                    outro = f.read().strip("\r\n")
+                if outro:
+                    parts.append(outro)
+            content = "\n".join(parts)
         else:
             content = frag
         emit(rel, base.render(
@@ -132,7 +158,6 @@ def main():
         print("  ~", c)
 
     if link_warnings:
-        # dedupe, keep page order
         seen = set()
         unique = []
         for w in link_warnings:

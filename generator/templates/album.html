@@ -1,7 +1,11 @@
+{%- if a.h2_raw is defined -%}
+{{ a.h2_raw }}
+{%- else -%}
 <h2>{{ a.artist }}<br>
 {{ a.name }}</h2>
-<img class="albumCover" src="Images/{{ a.cover }}" alt="">
-
+{%- endif -%}
+{% if a.cover is defined %}<img class="albumCover" src="Images/{{ a.cover }}" alt="">
+{% endif %}
 <p>
 {%- for t in a.tracks %}
 {%- if t.raw is defined %}

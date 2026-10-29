@@ -45,7 +45,7 @@ The site is **generated** — do not edit the `.html` files in the root by hand;
 
 - **Layout, sidebar, footer, top bar**: `generator/site.yaml` — one edit rebuilds every page.
 - **Albums**: `generator/albums.yaml` — one entry per album (tracks, links, credits, cover, nav icon). Adding an album = add data + drop images in `Images/` + rebuild. The album page, sidebar icon, and hub-page section all come from the same entry.
-- **Hub pages** (`LostDog.html`): assembled from `generator/src/pages/LostDog.html` (intro only) + every album entry carrying `hub: lostdog`, ordered by `hub_order`, each under its `anchor`. To feature an album there, add the three fields to its entry — never hand-edit the page.
+- **Hub pages** (`LostDog.html`, `Disco1.html`, `CrAvery.html`): assembled from the page's fragment (intro) + every album entry whose `hub:` list includes that page, ordered by `site.yaml -> hubs.<name>.order`, each under its `anchor` (plain scalar = same everywhere; dict = per-hub). A page may also have a `<name>.outro` fragment rendered after the sections (Disco1 and CrAvery do). To feature an album on a hub, add the page to its `hub:` list and add it to that hub's `order` — never hand-edit the generated page.
 - **Other pages** (Bios, Disco, lyrics...): edit the matching fragment in `generator/src/pages/` (a page's unique HTML) and rebuild.
 - **Images**: covers `Images/<Name>.jpg`, nav thumbnails `Images/nav<Name>Close01.*`, mp3s in `mp3/`, lyrics in `Lyrics/`.
 - mp3/lyrics links on album tracks: set `mp3:` / `lyrics:` on the track in `albums.yaml`.
