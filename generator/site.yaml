@@ -15,18 +15,18 @@ logo:
 
 # Left sidebar album icons, top to bottom. href/img/caption per entry.
 sidebar:
-  - {href: /Bull1.html, img: navBull01.jpg, caption: Bull}
+  - {href: /Bull1.html, img: navBull01.jpg}
   - {href: /ArtichokeHeart1.html, img: navArtichokeHeartClose01.gif, caption: Artichoke Heart}
-  - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg, caption: "Flat Halley"}
-  - {href: /CrAvery.html#HoboErotic, img: navHoboClose01.jpg, caption: CR Avery}
-  - {href: /Disco1.html#SheWasTheLawAlbum, img: navSheWasTheLawClose01.jpg, caption: She was the Law}
-  - {href: /Disco1.html#AifAlbum, img: navAifClose01.jpg, caption: Ain't if Funny}
-  - {href: /LostDog.html#SummerTimeAlbum, img: navSummerTimeClose02.jpg, caption: Summer Time"}
-  - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg, caption: "Pip"}
+  - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg}
+  - {href: /CrAvery.html#HoboErotic, img: navHoboClose01.jpg}
+  - {href: /Disco1.html#SheWasTheLawAlbum, img: navSheWasTheLawClose01.jpg}
+  - {href: /Disco1.html#AifAlbum, img: navAifClose01.jpg}
+  - {href: /LostDog.html#SummerTimeAlbum, img: navSummerTimeClose02.jpg}
+  - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg}
 
 footer:
   copyright_year: 2026
-  version: "2.0.13"
+  version: "2.0.2"
   contact_email: dwight.ivany@gmail.com
 
 # Hub pages: order of album sections on each. Albums not listed here render
