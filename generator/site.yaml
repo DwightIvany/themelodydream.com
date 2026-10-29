@@ -17,12 +17,12 @@ logo:
 sidebar:
   - {href: /Bull1.html, img: navBull01.jpg, caption: Bull}
   - {href: /ArtichokeHeart1.html, img: navArtichokeHeartClose01.gif, caption: Artichoke Heart}
-  - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg, caption: "Lost Dog: Flat Halley"}
+  - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg, caption: "Flat Halley"}
   - {href: /CrAvery.html#HoboErotic, img: navHoboClose01.jpg, caption: CR Avery}
   - {href: /Disco1.html#SheWasTheLawAlbum, img: navSheWasTheLawClose01.jpg, caption: She was the Law}
   - {href: /Disco1.html#AifAlbum, img: navAifClose01.jpg, caption: Ain't if Funny}
-  - {href: /LostDog.html#SummerTimeAlbum, img: navSummerTimeClose02.jpg, caption: "Lost Dog:<br/>Summer Time"}
-  - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg, caption: "Dwight Ivany: Pip"}
+  - {href: /LostDog.html#SummerTimeAlbum, img: navSummerTimeClose02.jpg, caption: Summer Time"}
+  - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg, caption: "Pip"}
 
 footer:
   copyright_year: 2026
