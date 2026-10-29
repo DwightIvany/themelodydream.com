@@ -1,9 +1,9 @@
 {%- if a.h2_raw is defined -%}
 {{ a.h2_raw }}
-{%- else -%}
+{% else -%}
 <h2>{{ a.artist }}<br>
 {{ a.name }}</h2>
-{%- endif -%}
+{% endif -%}
 {% if a.cover is defined %}<img class="albumCover" src="Images/{{ a.cover }}" alt="">
 {% endif %}
 <p>

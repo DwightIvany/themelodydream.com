@@ -36,6 +36,6 @@ hubs:
   lostdog:
     order: [Bull, "Artichoke Heart", "Ain't It Funny", "Summer Time", "Glazed Timbits", "Flat Halley", "Coquihalla Sky"]
   disco1:
-    order: ["Artichoke Heart", "Ain't It Funny", "Summer Time", "She Was the Law", "Daddy's Little Girl", "2nd Floor Window", "Flat Halley", "Speak of the Devil", "Sally Ann Xmas", "Glazed Timbits", "Pip"]
+    order: [Bull, "Artichoke Heart", "Ain't It Funny", "Summer Time", "She Was the Law", "Daddy's Little Girl", "2nd Floor Window", "Flat Halley", "Speak of the Devil", "Sally Ann Xmas", "Glazed Timbits", "Pip"]
   cravery:
     order: ["Hobo Erotic", "Speak of the Devil", "2nd Floor Window"]

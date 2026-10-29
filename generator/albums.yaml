@@ -19,7 +19,7 @@
 - name: Bull
   artist: Lost Dog
   file: Bull1.html
-  hub: [lostdog]
+  hub: [lostdog, disco1]
   anchor: BullAlbum
   title: "Lost Dog: Bull"
   keywords: "bull, lost dog"
@@ -213,7 +213,7 @@
     - {name: Rocking Horse Rock, num: "09"}
     - {name: Sunny Boy Floyd, num: "10"}
     - {name: Sunny, num: "11"}
-    - {name: Coo Coo, num: "12", mp3: /mp3/CooCoo.mp3, lyrics: Lyrics/cooCoo.html}
+    - {name: Coo Coo, num: "12", mp3: /mp3/CooCoo.mp3, lyrics: Lyrics/CooCoo.html}
     - {name: Play with me, num: "13"}
     - {name: Never was, num: "14"}
     - {name: Last Rolling Stone, num: "15"}
@@ -252,7 +252,7 @@
 - name: She Was the Law
   hub: [disco1]
   anchor: SheWasTheLawAlbum
-  h2_raw: |
+  h2_raw: |-
     <h2><a href="http://www.shewasthelaw.com/who.html">She
     Was The Law</a></h2>
   cover: SheWasTheLaw.jpg
@@ -274,7 +274,7 @@
 - name: Daddy's Little Girl
   hub: [disco1]
   anchor: DaddysLittleGirlAlbum
-  h2_raw: |
+  h2_raw: |-
     <h2><a href="http://www.myspace.com/pawnshopdiamond">Katie Ormiston</a><br />
     Daddy's Little Girl</h2>
   cover: DaddysGirl.jpg
@@ -304,7 +304,7 @@
 - name: Speak of the Devil
   hub: [disco1, cravery]
   anchor: SpeakOfTheDevilAlbum
-  h2_raw: |
+  h2_raw: |-
     <h2><a href="http://www.cravery.com">CR Avery</a><br>
     Speak of the Devil</h2>
   cover: SpeakOfTheDevil.jpg
@@ -331,7 +331,7 @@
 - name: Sally Ann Xmas
   hub: [disco1]
   anchor: SallyAnnXmasAlbum
-  h2_raw: |
+  h2_raw: |-
     <h2><a href="http://www.markberube.com">Mark Berube</a><br>
     <img class="albumCover" src="Images/SallyAnnXmas.jpg" alt=""> Sally Ann Xmas</h2>
   tracks:
@@ -377,7 +377,7 @@
 - name: Hobo Erotic
   hub: [cravery]
   anchor: HoboErotic
-  h2_raw: |
+  h2_raw: |-
     <h2><a href="http://www.cravery.com">CR Avery</a><br>
     Hobo Erotic</h2>
   cover: HoboErotic.jpg
