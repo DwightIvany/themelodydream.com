@@ -25,8 +25,8 @@ sidebar:
   - {href: /Disco1.html#PipAlbum, img: navPipClose01.jpg, caption: "Dwight Ivany: Pip"}
 
 footer:
-  copyright_year: 2019
-  version: "1.1"
+  copyright_year: 2026
+  version: "2.0.13"
   contact_email: dwight.ivany@gmail.com
 
 # Hub pages: order of album sections on each. Albums not listed here render
