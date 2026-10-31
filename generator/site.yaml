@@ -15,7 +15,7 @@ logo:
 
 # Left sidebar album icons, top to bottom. href/img/caption per entry.
 sidebar:
-  - {href: /Bull1.html, img: navBull01.jpg}
+  - {href: /Bull1.html, img: navBull01.png}
   - {href: /ArtichokeHeart1.html, img: navArtichokeHeartClose01.gif, caption: Artichoke Heart}
   - {href: /LostDog.html#FlatHalleyAlbum, img: navFlatHalleyClose01.jpg}
   - {href: /CrAvery.html#HoboErotic, img: navHoboClose01.jpg}
