@@ -1,4 +1,0 @@
-	<meta content="Dwight Ivany" name="author" />
-	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
-	<meta http-equiv="Content-Language" content="en-us" />
-	<meta content="themelody, themelody dream, music, production, folk, recording, vancouver, bc" name="keywords" />
