@@ -46,7 +46,9 @@
 			<td style="width: 150px;"><a href="{{ item.href }}">
 			<img style="width: 140px;" src="/Images/{{ item.img }}"
 			  alt="{{ item.img }}" hspace="0"></a>
+			{%- if item.caption is defined %}
 			<p class="caption">{{ item.caption }}</p>
+			{%- endif %}
 			</td>
 	    </tr>
 	    {%- endfor %}
